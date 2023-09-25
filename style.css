@@ -31,7 +31,7 @@ body {
 */
   /*Background shorthand  : colo image repeat position /size*/
 
-  background: var(--bg-url)no-repeat top center/cover;
+  background: var(--bg-url) no-repeat center/cover;
   height: 100vh;
 }
 
@@ -152,10 +152,9 @@ footer {
   text-align: center;
   font-size: 14px;
 }
-
 /* Media queries*/
 
-@media (min-width: 700px) {
+@media (min-width: 320px) {
     :root {
       --bg-url: url(imagens/bg-desktop.jpg);
     }
