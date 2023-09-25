@@ -38,7 +38,6 @@ body {
 body * {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
-
 }
 
 #container {
@@ -66,8 +65,7 @@ body * {
 #Switch {
   position: relative;
   width: 64px;
-  margin:4px auto;
-  
+  margin: 4px auto;
 }
 #Switch button {
   width: 32px;
@@ -81,6 +79,8 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: slide-back 0.4s;
 }
 
 #Switch span {
@@ -93,10 +93,13 @@ body * {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
-  .Light #Switch button{
-    right: 0;
-    left: initial;
-  }
+.Light #Switch button {
+  animation: slide-to 0.4s forwards;
+}
+
+#Switch button:hover{
+  outline: 8px solid var(--hightlight-color);
+}
 
 /*links*/
 
@@ -155,11 +158,32 @@ footer {
 /* Media queries*/
 
 @media (min-width: 320px) {
-    :root {
-      --bg-url: url(imagens/bg-desktop.jpg);
-    }
+  :root {
+    --bg-url: url(imagens/bg-desktop.jpg);
+  }
 
-    .Light {
-      --bg-url: url(imagens/bg-desktop-light.jpg);
-    }
+  .Light {
+    --bg-url: url(imagens/bg-desktop-light.jpg);
+  }
+}
+
+/* animations*/
+
+@keyframes slide-to {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
